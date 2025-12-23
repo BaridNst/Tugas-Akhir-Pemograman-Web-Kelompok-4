@@ -43,12 +43,3 @@
 * |
 
 ---
-
-## 🛠️ Cara Instalasi Lokal
-
-Jika Anda ingin menjalankan proyek ini di komputer lokal, ikuti langkah-langkah berikut:
-
-1. **Clone Repository**
-   ```bash
-   git clone [https://github.com/username-kamu/loadsystem-peminjaman.git](https://github.com/username-kamu/loadsystem-peminjaman.git)
-   cd loadsystem-peminjaman
