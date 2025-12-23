@@ -38,7 +38,9 @@
 
 | Halaman Login | Dashboard Utama |
 | :---: | :---: |
-| <img src="public/logo.png" width="200px" /> | *[Tambahkan Screenshot Dashboard Kamu Disini]* |
+| <img width="1920" height="1080" alt="Screenshot 2025-12-23 160923" src="https://github.com/user-attachments/assets/68aad343-bc73-4e3e-a606-d75f50f11506" />
+ | *![Uploading Screenshot 2025-12-23 161158.png…]()
+* |
 
 ---
 
