@@ -36,12 +36,8 @@
 
 ## 📸 Tampilan Aplikasi
 
-## 📸 Tampilan Aplikasi
-
-| **Halaman Login (Kiri)** | **Dashboard Utama (Kanan)** |
-| :---: | :---: |
-| <img width="450" alt="Screenshot 2025-12-23 160923" src="https://github.com/user-attachments/assets/6758bce7-e90d-400c-8123-7930288c1a92" />
- | <img width="450" alt="Screenshot 2025-12-23 161158" src="https://github.com/user-attachments/assets/2cf3f8a8-6c8d-4e76-8800-3a3a988eac7e" />
- |
+| **Halaman Login** | 
+| :---: | 
+| <img width="450" alt="Screenshot 2025-12-23 160923" src="https://github.com/user-attachments/assets/6758bce7-e90d-400c-8123-7930288c1a92" /> |
 
 ---
