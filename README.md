@@ -20,9 +20,11 @@
 
 ## 📸 Tampilan Aplikasi
 
-| **Dashboard Utama** | **Kelola Inventaris** |
+| **Dashboard Utama** | **Tampilan Profile** |
 | :---: | :---: |
-| <img src="https://github.com/user-attachments/assets/e9d897c5-7d85-4f58-8e30-a8fcc5e2bb62" width="400"> | <img src="https://github.com/user-attachments/assets/fb6005f5-d08a-41b0-9729-33f980f948ad" width="400"> |
+| <img width="1920" height="1080" alt="Screenshot 2025-12-30 234138" src="https://github.com/user-attachments/assets/bb9687b6-b581-45e9-b1b6-93fc8dfb7c14" />
+ | <img width="1920" height="1080" alt="Screenshot 2025-12-30 234154" src="https://github.com/user-attachments/assets/31326d4c-89a9-4611-835b-76a408d4c093" />
+ |
 
 ---
 
