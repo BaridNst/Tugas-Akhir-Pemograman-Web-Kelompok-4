@@ -23,7 +23,7 @@
                     <div class="relative group">
                         <div class="h-40 w-40 bg-white rounded-[2.5rem] p-3 shadow-2xl">
                             <div class="h-full w-full bg-gray-50 rounded-[1.8rem] flex items-center justify-center border-4 border-orange-100 overflow-hidden">
-                                <img src="{{ asset('HIMA-TI.png?v=1') }}" class="w-24 h-24 object-contain" alt="HIMA-TI">
+                                <img src="{{ asset('HIMA-TI.png?v='.time()) }}" class="w-24 h-24 object-contain" alt="HIMA-TI">
                             </div>
                         </div>
                         <div class="absolute bottom-2 right-2 bg-green-500 h-8 w-8 rounded-2xl border-4 border-white shadow-xl"></div>
