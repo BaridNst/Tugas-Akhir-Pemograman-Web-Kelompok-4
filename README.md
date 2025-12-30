@@ -19,7 +19,7 @@
 
 ## 📸 Tampilan Aplikasi
 
-| **Dashboard Utama** | **Tampilan Profile** |
+| **Dashboard Utama (update)** | **Tampilan Profile (update)** |
 | :---: | :---: |
 | <img width="400" alt="Screenshot 2025-12-30 234138" src="https://github.com/user-attachments/assets/bb9687b6-b581-45e9-b1b6-93fc8dfb7c14" /> |<img width="400" alt="Screenshot 2025-12-30 234154" src="https://github.com/user-attachments/assets/31326d4c-89a9-4611-835b-76a408d4c093" /> |
 
