@@ -1,11 +1,10 @@
-# 📦 LOADSYSTEM - Peminjaman Inventaris HIMA-TI
+# 📦 LOADSYSTEM - Peminjaman Inventaris Program Studi Teknologi Informasi
 
 ![Laravel](https://img.shields.io/badge/Laravel-11.x-red)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3.x-blue)
 ![Organization](https://img.shields.io/badge/Organization-HIMA--TI-orange)
 
-**LOADSYSTEM** adalah solusi manajemen inventaris digital yang dirancang khusus untuk **HIMA-TI**. Sistem ini mengintegrasikan pendataan aset organisasi dengan alur peminjaman yang transparan dan responsif.
-
+**LOADSYSTEM** adalah solusi manajemen inventaris digital yang dirancang khusus untuk Program Studi Teknologi Informasi. Sistem ini mengintegrasikan pendataan aset laboratorium dan fasilitas prodi dengan alur peminjaman yang transparan serta responsif untuk mendukung kegiatan akademik.
 ---
 
 ## ✨ Fitur Utama
