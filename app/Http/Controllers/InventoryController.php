@@ -2,43 +2,81 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Inventory; // Ini wajib ada agar controller kenal modelnya
+use App\Models\Barang;
+use App\Models\Peminjaman;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InventoryController extends Controller
 {
+    // 1. Tampilan Dashboard Utama
     public function index()
     {
-        // Mengambil semua data barang dari database
-        $items = Inventory::latest()->get(); 
-        return view('inventories.index', compact('items'));
+        $barangs = Barang::all();
+        // Mengambil riwayat dengan relasi user dan barang
+        $histories = Peminjaman::with(['user', 'barang'])->latest()->get();
+        return view('dashboard', compact('barangs', 'histories'));
     }
 
-    public function store(Request $request)
+    // 2. Fungsi Pinjam Barang
+    public function pinjam(Request $request, $id)
     {
-        // Validasi input data
-        $request->validate([
-            'item_code' => 'required|unique:inventories',
-            'name' => 'required',
-            'category' => 'required',
+        $barang = Barang::findOrFail($id);
+
+        // Validasi jika stok habis
+        if ($barang->stok < 1) {
+            return redirect()->back()->with('error', 'Maaf, stok barang sedang habis!');
+        }
+
+        // Simpan data ke tabel peminjaman
+        Peminjaman::create([
+            'user_id' => Auth::id(),
+            'barang_id' => $barang->id,
+            'jumlah' => 1,
+            'tanggal_pinjam' => now(),
+            'status' => 'dipinjam', 
         ]);
 
-        // Proses Create (Simpan ke database)
-        Inventory::create([
-            'item_code' => $request->item_code,
-            'name' => $request->name,
-            'category' => $request->category,
-            'condition' => 'baik', // Default kondisi
-            'status' => 'tersedia' // Default status
-        ]);
+        // Kurangi stok barang
+        $barang->decrement('stok');
 
-        return redirect()->route('inventories.index')->with('success', 'Barang berhasil ditambahkan!');
+        return redirect()->back()->with('success', 'Berhasil meminjam ' . $barang->nama_barang);
     }
 
-    public function destroy(Inventory $inventory)
+    // 3. Fungsi Kembalikan Barang
+    public function kembali($id)
     {
-        // Proses Delete (Hapus dari database)
-        $inventory->delete();
-        return redirect()->route('inventories.index')->with('success', 'Barang berhasil dihapus!');
+        $history = Peminjaman::findOrFail($id);
+        
+        // Pastikan hanya barang dengan status 'dipinjam' yang bisa dikembalikan
+        if ($history->status !== 'dipinjam') {
+            return redirect()->back()->with('error', 'Barang ini tidak dalam status dipinjam.');
+        }
+
+        // Update status di tabel peminjaman
+        $history->update([
+            'status' => 'dikembalikan',
+            'tanggal_kembali' => now(),
+        ]);
+
+        // Tambah stok barang kembali ke jumlah semula
+        $barang = Barang::find($history->barang_id);
+        if ($barang) {
+            $barang->increment('stok');
+        }
+
+        return redirect()->back()->with('success', 'Barang ' . $barang->nama_barang . ' telah dikembalikan.');
+    }
+
+    // 4. Fungsi Bersihkan Riwayat (Hanya menghapus yang sudah dikembalikan)
+    public function bersihkanRiwayat()
+    {
+        // Hanya hapus baris yang statusnya sudah 'dikembalikan'
+        // Ini mencegah hilangnya tombol "Kembalikan" untuk barang yang masih dibawa user
+        Peminjaman::where('user_id', Auth::id())
+                  ->where('status', 'dikembalikan')
+                  ->delete();
+
+        return redirect()->back()->with('success', 'Riwayat yang telah selesai berhasil dibersihkan.');
     }
 }
